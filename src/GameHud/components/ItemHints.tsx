@@ -27,7 +27,7 @@ const ItemHelp = ({weaponInfo}: {weaponInfo: WeaponInfo}) => {
     <ItemHelpContainer>
       <Column>
         <Row>
-          <ItemColumn>
+          {/* <ItemColumn>
             <MiniImg src={weaponInfo.primaryIcon}/>
             <Key pc={['1']} xbox={['arr_left']} hint={''} />
           </ItemColumn>
@@ -40,11 +40,11 @@ const ItemHelp = ({weaponInfo}: {weaponInfo: WeaponInfo}) => {
           <ItemColumn>
             <MiniImg src={weaponInfo.launcherIcon}/>
             <Key pc={['3']} xbox={['arr_right']} hint={''} />
-          </ItemColumn>
+          </ItemColumn> */}
           
           <ItemColumn>
             <MiniImg src={weaponInfo.grenadeIcon}/>
-            <Key pc={['4']} xbox={['arr_down']} hint={''} />
+            <Key pc={['G']} xbox={['arr_down']} hint={''} />
           </ItemColumn>
         </Row>
       </Column>
