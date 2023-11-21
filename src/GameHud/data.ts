@@ -64,14 +64,35 @@ export const gameHudMock: GameHudData = {
       hint: 'Reload'
     },
     {
-      id: '',
+      id: 'reload',
+      region: "BR",
+      pc: ['R'],
+      xbox: ['LB', 'A'],
+      hint: 'Reload'
+    },
+    {
+      id: 'reload',
+      region: "BR",
+      pc: ['R'],
+      xbox: ['LB', 'A'],
+      hint: 'Reload'
+    },
+    {
+      id: 'rotate',
       region: "BL",
       pc: ['Q','E'],
       xbox: ['LB', 'A'],
       hint: 'Rotate Camera'
     },
     {
-      id: '',
+      id: 'scrollZoom',
+      region: "BL",
+      pc: ['scroll'],
+      xbox: ['LB', 'A'],
+      hint: 'Zoom Camera'
+    },
+    {
+      id: 'crouch',
       region: "BL",
       pc: ['X'],
       xbox: ['X'],

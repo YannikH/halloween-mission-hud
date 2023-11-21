@@ -28,6 +28,25 @@ export const KeyCap = styled.span`
     margin-left: 0px;
   }
 `;
+export const KeyCapBig = styled.span`
+  background-color: #222222;
+  border: solid 1px #fff;
+  min-height: 32px;
+  min-width: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 17px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 0 10px;
+  :first-child {
+    margin-left: 0px;
+  }
+`;
 
 
 export const ControllerButtonSimple = styled.span`
@@ -128,13 +147,20 @@ const HintText = styled.span`
 `;
 
 export const getHelperKeys = (keys: KeyHelper[], region: KeyRegion) => {
-  const filtered = keys.filter(key => key.region == region);
-  return filtered.map(key => <Key {...key}/>);
+  const filteredRegion = keys.filter(key => key.region == region);
+  const keyIds: string[] = [];
+  const filteredUnique = filteredRegion.filter(key => {
+    const exists = keyIds.includes(key.id);
+    if (!exists) keyIds.push(key.id);
+    return !exists
+  });
+  return filteredUnique.map(key => <Key {...key}/>);
 };
 
 const Key = ({pc, xbox, hint}: KeyParams) => {
   const isXbox = useContext(ControllerContext);
-  const KeyType = isXbox ? ControllerButton : KeyCap;
+  let KeyType = isXbox ? ControllerButton : KeyCap;
+  if (KeyType && pc[0].length > 1) KeyType = KeyCapBig;
   const keysArray = isXbox ? xbox : pc;
 
   let keys: any = <></>;
