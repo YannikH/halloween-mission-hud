@@ -27,6 +27,7 @@ export type GameHudData = {
   stance: "prone" | "crouch" | "up";
   usingController: boolean;
   keyHelpers: KeyHelper[];
+  stanceImage: 'crouch.png';
 } & WeaponInfo;
 
 
@@ -34,16 +35,17 @@ export const gameHudMock: GameHudData = {
   background: 0,
   ammo: 23,
   magazines: 7,
-  currentWeaponIcon: 'm4a1.png',
+  currentWeaponIcon: 'ak.png',
   magazineIcon: 'stanag.png',
   ammoName: 'Tracer',
   firemodeName: 'Full',
   firemodeIconNumber: 1,
   firemodeIconMax: 5,
-  primaryIcon: 'm4a1.png',
+  primaryIcon: 'ak.png',
   secondaryIcon: 'g17.png',
   launcherIcon: 'carl.png',
   grenadeIcon: 'm67.png',
+  stanceImage: 'crouch.png',
   stance: "up",
   usingController: false,
   keyHelpers: [

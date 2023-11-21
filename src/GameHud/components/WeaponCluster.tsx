@@ -87,10 +87,10 @@ const WeaponCluster = ({gameHudData}: {gameHudData: GameHudData}) => {
             <Row>
               {gameHudData.ammo}
               <MagazineImage src={gameHudData.magazineIcon} />
-              x{gameHudData.magazines}
+              infinite
             </Row>
           </AmmoColumn>
-          <StanceIndicator src="run.png" />
+          <StanceIndicator src={gameHudData.stanceImage} />
           </SkewCounter>
       </WeaponClusterBackground>
       <Row style={{justifyContent: 'flex-end'}}> { keys } </Row>
